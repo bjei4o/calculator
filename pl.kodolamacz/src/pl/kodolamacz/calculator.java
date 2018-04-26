@@ -12,24 +12,29 @@ import java.util.Scanner;
 public class calculator {
 
 	public static void main(String[] args) {
-		
+		String exit = "";
 		Scanner loadData = new Scanner(System.in);
 		System.out.println("Welcome in calculator app!");
 	
-			
+		while(exit.equals("q") == false){	
 		
 		System.out.println("What kind of operation do you want to make? Addition, Substract, Divide, Multiply or Modulo");
 		System.out.println("(write +, -, /, * or % and confirm by enter) or \"q\" to exit");
 			
 		String typeOfAction = loadData.next();
-
+		if(typeOfAction.equals("q")) {
+			exit = typeOfAction;
+			System.out.println("Bye bye!");
+			continue;
+		}
 		System.out.println("Enter first number: ");
 		Float number1 = loadData.nextFloat();
 		System.out.println("Enter second number: ");
 		Float number2 = loadData.nextFloat();
 			
-		System.out.print(result(typeOfAction, number1, number2));
-		
+		System.out.println(result(typeOfAction, number1, number2));
+
+		}
 		loadData.close();
 	}
 	
